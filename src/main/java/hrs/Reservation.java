@@ -61,6 +61,7 @@ public class Reservation {
 
             System.out.println("#### Reservation onPreUpdate ###");
             System.out.println(this.getId());
+            System.out.println("#### CI/CD TEST ###");
 
 //            Optional<Reservation> reservationOptional = reservationRepository.findById(this.getId());
 
