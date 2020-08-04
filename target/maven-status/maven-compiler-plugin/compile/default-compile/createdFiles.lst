@@ -1,0 +1,17 @@
+hrs\Reservation.class
+hrs\ReservationController.class
+hrs\external\PaymentService.class
+hrs\ReservationRepository.class
+hrs\AbstractEvent$1.class
+hrs\ReservationinquiryRepository.class
+hrs\ReservationCanceled.class
+hrs\Reservationinquiry.class
+hrs\ReservationConfirmedCanceled.class
+hrs\ReservationApplication.class
+hrs\ReservationinquiryViewHandler.class
+hrs\PolicyHandler.class
+hrs\Reserved.class
+hrs\config\kafka\KafkaProcessor.class
+hrs\AbstractEvent.class
+hrs\ReservationConfirmed.class
+hrs\external\Payment.class
