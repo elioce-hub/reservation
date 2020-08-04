@@ -9,6 +9,7 @@ public class Reserved extends AbstractEvent {
     private String status;
     private Integer hotelId;
     private Float price;
+    private String updateGubun;
 
     public Long getId() {
         return id;
@@ -58,5 +59,12 @@ public class Reserved extends AbstractEvent {
 
     public void setPrice(Float price) {
         this.price = price;
+    }
+    public String getUpdateGubun() {
+        return updateGubun;
+    }
+
+    public void setUpdateGubun(String updateGubun) {
+        this.updateGubun = updateGubun;
     }
 }

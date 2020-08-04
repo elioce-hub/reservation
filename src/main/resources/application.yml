@@ -37,6 +37,10 @@ logging:
     org.springframework.cloud: debug
 server:
   port: 8081
+external:
+  url:
+    payment: http://localhost:8088
+
 ---
 
 spring:
@@ -62,3 +66,6 @@ spring:
         event-out:
           destination: hrs
           contentType: application/json
+external:
+  url:
+    payment: http://payment:8080

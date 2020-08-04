@@ -23,11 +23,17 @@ public class Reservation {
     private Float price;
     private String updateGubun;
 
+    @PrePersist
+    public void onPrePersist(){
+        //예약데이터 생성 전 default value
+        this.setStatus("Reservation Request");
+    }
+
     @PostPersist
     public void onPostPersist(){
         Reserved reserved = new Reserved();
         BeanUtils.copyProperties(this, reserved);
-        reserved.publishAfterCommit();
+        reserved.publish();
 
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
@@ -45,7 +51,7 @@ public class Reservation {
 
     @PostUpdate
     public void onPostUpdate(){
-        if("delete".equals(this.updateGubun)){
+        if(!"Reservation Canceled".equals(getStatus()) && "delete".equals(getUpdateGubun())){
             ReservationCanceled reservationCanceled = new ReservationCanceled();
             BeanUtils.copyProperties(this, reservationCanceled);
             reservationCanceled.publishAfterCommit();
@@ -54,14 +60,17 @@ public class Reservation {
 
     @PreUpdate
     public void onPreUpdate(){
-        if("delete".equals(this.updateGubun)){
+        if(!"Reservation Canceled".equals(getStatus()) && "delete".equals(getUpdateGubun())){
 //            ReservationCanceled reservationCanceled = new ReservationCanceled();
 //            BeanUtils.copyProperties(this, reservationCanceled);
 //            reservationCanceled.publishAfterCommit();
 
             System.out.println("#### Reservation onPreUpdate ###");
-            System.out.println(this.getId());
+            System.out.println(getId());
+            System.out.println(getHotelId());
             System.out.println("#### CI/CD TEST ###");
+
+
 
 //            Optional<Reservation> reservationOptional = reservationRepository.findById(this.getId());
 
