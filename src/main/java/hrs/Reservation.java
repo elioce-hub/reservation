@@ -2,11 +2,6 @@ package hrs;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import sun.security.ssl.Debug;
-
-import java.util.List;
-import java.util.Optional;
 
 @Entity
 @Table(name="Reservation_table")
