@@ -22,6 +22,7 @@ public class Reservation {
     private Integer hotelId;
     private Float price;
     private String updateGubun;
+    private String email;
 
     @PrePersist
     public void onPrePersist(){
@@ -141,5 +142,12 @@ public class Reservation {
 
     public void setUpdateGubun(String updateGubun) {
         this.updateGubun = updateGubun;
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

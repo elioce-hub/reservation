@@ -8,7 +8,6 @@ import java.util.List;
 public class Reservationinquiry {
 
         @Id
-        @GeneratedValue(strategy=GenerationType.IDENTITY)
         private Long id;
         private String customerName;
         private Integer nights;
